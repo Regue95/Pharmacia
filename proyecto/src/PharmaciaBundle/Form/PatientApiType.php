@@ -13,10 +13,13 @@ class PatientApiType extends PatientType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-       $builder->add('name')->add('lastName')->add('age')->add('idNumber')->add('idType')->add('analisis')->add('observations');
-    }/**
+        $builder->add('name')->add('lastName')->add('age')->add('idNumber')->add('idType')->add('analisis')->add('observations');
+    }
+
+    /**
      * {@inheritdoc}
      */
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

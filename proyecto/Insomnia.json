@@ -1,0 +1,136 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-11-21T02:04:41.459Z",
+	"__export_source": "insomnia.desktop.app:v6.2.0",
+	"resources": [
+		{
+			"_id": "wrk_8cdf31b7d8f347e2993ed5c5d29269ce",
+			"created": 1542424248609,
+			"description": "",
+			"modified": 1542424248609,
+			"name": "Insomnia",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_5e12ce0f4f434866834fdb30d244537e",
+			"color": null,
+			"created": 1542424248641,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1542424248641,
+			"modified": 1542424248641,
+			"name": "New Environment",
+			"parentId": "wrk_8cdf31b7d8f347e2993ed5c5d29269ce",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_a640a12fbd2a4ed0bd4f98739e20fa07",
+			"cookies": [
+				{
+					"creation": "2018-11-21T00:25:04.574Z",
+					"domain": "127.0.0.1",
+					"hostOnly": true,
+					"httpOnly": true,
+					"id": "4745171538547328",
+					"key": "PHPSESSID",
+					"lastAccessed": "2018-11-21T00:25:04.574Z",
+					"path": "/",
+					"value": "15dli01rfm1u5715q0gjd1ubga"
+				}
+			],
+			"created": 1542424248644,
+			"modified": 1542759904596,
+			"name": "Default Jar",
+			"parentId": "wrk_8cdf31b7d8f347e2993ed5c5d29269ce",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_cb2e8f11e0c84b6fb4751ef28bc8679c",
+			"authentication": {},
+			"body": {},
+			"created": 1542761450294,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1542761450294,
+			"method": "GET",
+			"modified": 1542765796875,
+			"name": "patient list",
+			"parameters": [],
+			"parentId": "wrk_8cdf31b7d8f347e2993ed5c5d29269ce",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8000/patient/api/patient/list",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b4093bfe42a641c5865fa373ce22af9d",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_d4c414ced89a44e0876855b891ca3549",
+						"name": "name",
+						"value": "Test"
+					},
+					{
+						"id": "pair_e0c0409498c3499d949ace3371a98b42",
+						"name": "lastName",
+						"value": "Test"
+					},
+					{
+						"id": "pair_0e738929ff534fff982abe0e10839ac1",
+						"name": "age",
+						"value": "30"
+					},
+					{
+						"id": "pair_7934290f144449629757ca9abdbc8e21",
+						"name": "idNumber",
+						"value": "97654321"
+					},
+					{
+						"id": "pair_55b29c2c62cc4a25a824c58854028de5",
+						"name": "idType",
+						"value": "DNI"
+					},
+					{
+						"id": "pair_86cf38d04f90400ca9a5872530bea3a9",
+						"name": "observations",
+						"value": "-"
+					}
+				]
+			},
+			"created": 1542761475476,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_49616c2ddd254097a928e37221a25ef5",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542761475476,
+			"method": "POST",
+			"modified": 1542765874287,
+			"name": "create patient",
+			"parameters": [],
+			"parentId": "wrk_8cdf31b7d8f347e2993ed5c5d29269ce",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8000/patient/api/new",
+			"_type": "request"
+		}
+	]
+}

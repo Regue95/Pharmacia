@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="patient")
  * @ORM\Entity(repositoryClass="PharmaciaBundle\Repository\PatientRepository")
  */
-class Patient
+class Patient implements \JsonSerializable
 {
     /**
      * @var int
@@ -25,49 +25,42 @@ class Patient
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="lastName", type="string", length=255)
      */
     private $lastName;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="age", type="integer")
      */
     private $age;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="idNumber", type="string", length=255)
      */
     private $idNumber;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="idType", type="string", length=255)
      */
     private $idType;
 
     /**
-     * @var array
-     *
-     * @ORM\Column(name="analisis", type="array")
-     */
-    private $analisis;
-
-    /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="observations", type="string", length=255)
      */
     private $observations;
@@ -75,14 +68,19 @@ class Patient
 
     /**
      * @var arrayColection
-     * @ORM\ManyToMany(targetEntity="Analisis", inversedBy="patient")
+     * @ORM\ManyToMany(targetEntity="Analisis", inversedBy="patients")
      * @ORM\JoinTable (name="patient_analisis")
      */
-    private $analysis=null;
+    private $analisis=null;
 
     public function __construct()
     {
-        $this->analysis = new ArrayCollection();
+        $this->analisis = new ArrayCollection();
+    }
+
+    public function getAnalisis()
+    {
+        return $this->analisis;
     }
 
     /**
@@ -216,30 +214,6 @@ class Patient
     }
 
     /**
-     * Set analisis
-     *
-     * @param array $analisis
-     *
-     * @return Patient
-     */
-    public function setAnalisis($analisis)
-    {
-        $this->analisis = $analisis;
-
-        return $this;
-    }
-
-    /**
-     * Get analisis
-     *
-     * @return array
-     */
-    public function getAnalisis()
-    {
-        return $this->analisis;
-    }
-
-    /**
      * Set observations
      *
      * @param string $observations
@@ -272,8 +246,7 @@ class Patient
                 'age' => $this->getAge(),
                 'idNumber' => $this->getIdNumber(),
                 'idType' => $this->getIdType(),
-                'analisis' => $this->getAnalisis(),
-                'observations' => $this->getObservations(),
+                'observations' => $this->getObservations()
                ];
     }
 
